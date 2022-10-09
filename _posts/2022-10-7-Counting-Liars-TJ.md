@@ -34,7 +34,7 @@ tags: [OI,题解,离散化]
 
 代码：（100pts）
 
-```C++
+```c++
 #include<bits/stdc++.h>
 using namespace std;
 
