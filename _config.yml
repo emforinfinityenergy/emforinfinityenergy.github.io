@@ -6,7 +6,7 @@
 # Site
 title: EM | InfinityEnergy
 subtitle: A personal blog
-description:
+description: A junior high student.
 author: EM
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: zh-Hans
@@ -362,8 +362,8 @@ highlight_theme: night
 
 # MathJax Support
 mathjax:
-  enable: false
-  per_page: false
+  enable: true
+  per_page: true
   cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
 
 # Han Support docs: https://hanzi.pro/
