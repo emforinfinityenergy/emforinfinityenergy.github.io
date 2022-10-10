@@ -4,7 +4,7 @@ title: USACO 2022 US Open Contest, Bronze, Problem 2 & NKOJ P9793 Counting Liars
 subtitle: 一道简单的离散化
 author: EM
 categories: OI
-tags: [OI,题解,离散化]
+tags: [题解,离散化]
 ---
 本题是**USACO 2022 US Open Contest, Bronze, Problem 2**，以及**NKOJ P9793**
 
