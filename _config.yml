@@ -213,8 +213,8 @@ font:
 # Social Links
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
-#social:
-  #LinkLabel: Link
+social:
+  Luogu: https://www.luogu.com.cn/user/460391
 
 
 # Social Links Icons
@@ -229,6 +229,7 @@ social_icons:
   GitHub: github
   Twitter: twitter
   Weibo: weibo
+  Luogu: code
 
 
 # Sidebar Avatar
@@ -353,7 +354,7 @@ custom_logo:
 # Available value:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: night
+highlight_theme: night blue
 
 
 # ---------------------------------------------------------------
