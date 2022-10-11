@@ -4,8 +4,8 @@ title: NKRQ运动会2022专题
 subtitle: 运动会
 date: 2022-10-12 12:05:00
 author: EM
-categories: 记事
-tags: [学校]
+categories: OI
+tags: [离散化]
 ---
 
 **NKOJ P8615 卡片**  
