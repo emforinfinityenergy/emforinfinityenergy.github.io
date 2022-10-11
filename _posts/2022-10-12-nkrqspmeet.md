@@ -1,11 +1,11 @@
 ---
 layout: post
-title: NKOJ P8615 卡片 半个题解
-subtitle: 考场上的心路历程
-date: 2022-10-7 12:05:00
+title: NKRQ运动会2022专题
+subtitle: 运动会
+date: 2022-10-12 12:05:00
 author: EM
-categories: OI
-tags: [题解,搜索]
+categories: 记事
+tags: [学校]
 ---
 
 **NKOJ P8615 卡片**  
