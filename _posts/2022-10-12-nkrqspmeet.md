@@ -7,83 +7,157 @@ categories: 记事
 tags: [学校]
 ---
 
-这次运动会应该是初中阶段最后一次**完整**的运动会了。毕竟初三迫于学业，运动会项目阉割了很多。正好搭了个博客，可以浅浅记录一下。
+**NKOJ P8615 卡片**  
 
-## 时间线
+## 问题描述
 
-### Day -2?
+果果有 $$n$$ 张卡片，每 $$i$$ 张卡片上有一个数字 。果果在里面选出了 $$k$$ 张，按照某种顺序依次排列成一个数。
 
-CT宣布了运动会开始的消息。
+比如果果选出了 $$3,13,1$$ 这三张卡片，果果就可以排列成 $$3131,3113,1331,1313,1133$$ 这五个数。
 
-> “不要**受伤**，还有就是不要再拿**倒数第一**了。”
->
-> ——CT
+你需要帮果果求出对于所有选出 $$k$$ 张卡片的方案，果果总共能拼成多少种不同的数字。
 
-### Day -2?
+## 分析1（骗分）(30-40pts)
 
-报名结束了。~~有相当一部分人不是自愿的，而且有些人有实力不想报~~
+观察数据范围，**对于20%的数据，有** $$1 \leq n \leq 6$$，**对于另20%的数据，所有卡片上的数字相等**
 
-### Day -1?
+不难推出， $$k=1$$ 时答案是数字不重复的卡片个数~~然而我直接是输出的卡片个数~~，数字相等时答案为1。
 
-李俊言拿下乒乓球初赛第三，晋级决赛。~~本来我不是很看好他~~
+代码：(30pts)
 
-> “你这次怎么不上呢？”
->
-> “李俊言要上的嘛，我宠着他。”
->
-> ——与张芝源的对话
+```c++
+#include<bits/stdc++.h>
+using namespace std;
 
-### Day -1?
+int main() {
+	int n, k;
+	cin >> n >> k;
+	if (k == 1) cout << n;
+	else cout << 1;
+	return 0;
+}
+```
 
-三对三篮球初赛结束了，我们班一共胜两场，败于19班，无缘决赛。
+## 分析2（string DFS）(80pts)
 
-> “我们班输给19班，你们呢？”
->
-> “我们也是。”
->
-> ——与17班某同学的对话
+由于**n<=10**，考虑dfs，不再赘述。
 
-羽毛球方面，小宝一共胜一场，第二轮遇到区冠军，**寄**。
+然而，由于我只想到string DFS，查重略显麻烦。
 
-同时部分预赛也一起进行，但是记忆略显模糊。
+因此使用一个queue~~可以用数组，我是傻逼~~ 每次遍历查重 ~~已经和正解渐行渐远了~~
 
-### Day -15
+代码：(80pts)
 
-第一场足球预赛以比分1：0获胜。~~也是唯一一场了~~
+```c++
+#include<bits/stdc++.h>
+using namespace std;
+
+int n, k, ans;
+bool b[10005];
+string a[10005];
+
+queue<string> q;
+
+bool check(string p) {
+	for (int i = 1; i <= q.size(); i++) {
+		if (p == q.front()) return false;
+		q.push(q.front());
+		q.pop();
+	}
+	return true;
+}
+
+void dfs(int step, string p) {
+	if (step == k + 1) if (check(p)) {
+		ans++;
+		q.push(p);
+	}
+	for (int i = 1; i <= n; i++) if (!b[i]) {
+		b[i] = true;
+		dfs(step + 1, p + a[i]);
+		b[i] = false;
+	}
+}
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
+	cin >> n >> k;
+	for (int i = 1; i <= n; i++) cin >> a[i];
+	dfs(1, "");
+	cout << ans;
+	return 0;
+}
+```
 
 
 
-### Day  -4
+## 分析3（string DFS + 骗分）(100pts)
 
-足球**连败两场**，这使我，估计还有班上很多同学以及CT，遭受到了晴天霹雳。~~毕竟我们可是全年级体育生最多的班。~~两场比赛的对手分别是11班和1班，11班算是老对手，上次运动会他们也是略胜一筹，这次结果依然如此。不知谢承轩没有受伤能够上场情况是否就能扭转。1班这场比赛输了是万万没有想到的，毕竟1班的实力应当是远不及我们的。
+我们观察两次的评测结果：
 
-> “1班**居然**打赢了14班！”
->
-> ——当日晚自习18班门口的一句议论
+分析1：
 
-> “我也没想到啊，本来我们都准备直接认输了的，结果我们上场居然赢了。”
->
-> ——1班某同学
+![分析1](https://files.catbox.moe/0dzgx0.png)
 
-由于初三运动会没有足球项目，我们班的足球历史只能留下**遗憾的一笔**。
+分析2：
 
-### Day -3
+![](https://files.catbox.moe/5d0wdu.png)
 
-跳高预赛。
+我们发现，T掉的两个点刚好是我们骗到的其中两个点。由于 $$k=1$$ 时，dfs只执行$$N$$次，没有TLE的可能，所以判定测试点5，6为卡片数字全部相等的情况。因此，特判该情况并输出1。$$Accepted$$。
 
-### Day -2
+代码：（100pts）(3243ms)
 
-运动会延期举行。
+```c++
+#include<bits/stdc++.h>
+using namespace std;
 
-> “刚刚接到通知哈，因疫情原因，运动会延期举行。”
->
-> ——CT
+int n, k, ans;
+bool b[10005];
+string a[10005];
 
-**由于运动会遥遥无期，先放在这里，之后继续更**
+queue<string> q;
 
-**——2022/10/12(原定Day -2)**
+bool check(string p) {
+	for (int i = 1; i <= q.size(); i++) {
+		if (p == q.front()) return false;
+		q.push(q.front());
+		q.pop();
+	}
+	return true;
+}
 
+void dfs(int step, string p) {
+	if (step == k + 1) if (check(p)) {
+		ans++;
+		q.push(p);
+	}
+	for (int i = 1; i <= n; i++) if (!b[i]) {
+		b[i] = true;
+		dfs(step + 1, p + a[i]);
+		b[i] = false;
+	}
+}
 
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
+	cin >> n >> k;
+	bool flag = true;
+	for (int i = 1; i <= n; i++) {
+		cin >> a[i];
+		if (i > 2 && a[i] != a[i - 1]) flag = false;
+	}
+	if (flag) {
+		cout << 1;
+		return 0;
+	}
+	dfs(1, "");
+	cout << ans;
+	return 0;
+}
+```
 
-
-
+这只是一个半吊子解法，很多队友都解出了正确的int DFS。orz %%%
