@@ -1,11 +1,10 @@
 ---
 layout: post
-title: 
-subtitle: 运动会
+title: NKRQ2022
 date: 2022-10-12 12:05:00
 author: EM
-categories: OI
-tags: [离散化]
+categories: 记事
+tags: [学校]
 ---
 
 **NKOJ P8615 卡片**  
