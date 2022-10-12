@@ -2,6 +2,7 @@
 layout: post
 title: NKRQ运动会2022专题
 author: EM
+date: 2022-10-12
 categories: 记事
 tags: [学校]
 ---
