@@ -1,10 +1,11 @@
 ---
 layout: post
-title: NKRQ2022运动会专题
+title: Where we begin.
 date: 2022-10-13
+subtitle: 新的博客
 author: EM
-categories: 记事
-tags: [学校]
+categories: 常规
+tags: [常规]
 ---
 
 这次运动会应该是初中阶段最后一次**完整**的运动会了。毕竟初三迫于学业，运动会项目阉割了很多。正好搭了个博客，可以浅浅记录一下。
