@@ -1,7 +1,6 @@
 ---
 layout: post
-title: Where we begin
-date: 2022-10-09 13:15:00
+title: NKRQ运动会2022专题
 author: EM
 categories: 记事
 tags: [学校]
