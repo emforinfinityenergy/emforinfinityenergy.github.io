@@ -1,10 +1,10 @@
 ---
 layout: post
 title: Where we begin
-date: 2022-10-7 00:05:00
+date: 2022-10-13 13:15:00
 author: EM
-categories: 常规
-tags: [常规]
+categories: 记事
+tags: [学校]
 ---
 
 ## 前言
