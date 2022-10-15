@@ -21,15 +21,19 @@ tags: [数学]
 $$
 x^{2} + 2x = 5
 $$
+
 $$
 x^{2} + 2x + 1 = 6
 $$
+
 $$
 (x+1)^{2} = 6
 $$
+
 $$
 |x+1| = \sqrt{6}
 $$
+
 $$
 x = \pm\sqrt{6} - 1
 $$
@@ -52,21 +56,27 @@ $$
 $$
 x^{2} + 2x = 5
 $$
+
 $$
 x^{2} + 2x - 5 = 0
 $$
+
 $$
 \Delta = 4+20=24
 $$
+
 $$
 \because\Delta>0
 $$
+
 $$
 \therefore 方程有两个实数根
 $$
+
 $$
 \therefore x=\frac{-b\pm\sqrt{\Delta}}{2a}
 $$
+
 $$
 \therefore x = \pm\sqrt{6} - 1
 $$
