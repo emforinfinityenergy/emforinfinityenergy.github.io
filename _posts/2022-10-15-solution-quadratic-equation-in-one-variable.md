@@ -19,10 +19,10 @@ tags: [数学]
 
 例如：
 $$
-x^{2} + 2x = 5 \newline
-x^{2} + 2x + 1 = 6 \newline
-(x+1)^{2} = 6 \newline
-|x+1| = \sqrt{6} \newline
+x^{2} + 2x = 5
+x^{2} + 2x + 1 = 6
+(x+1)^{2} = 6
+|x+1| = \sqrt{6}
 x = \pm\sqrt{6} - 1
 $$
 
@@ -42,13 +42,12 @@ $$
 
 例如：
 $$
-
-x^{2} + 2x = 5 \newline
-x^{2} + 2x - 5 = 0 \newline
-\Delta = 4+20=24 \newline
-\because\Delta>0 \newline
-\therefore 方程有两个实数根 \newline
-\therefore x=\frac{-b\pm\sqrt{\Delta}}{2a} \newline
+x^{2} + 2x = 5
+x^{2} + 2x - 5 = 0
+\Delta = 4+20=24
+\because\Delta>0
+\therefore 方程有两个实数根
+\therefore x=\frac{-b\pm\sqrt{\Delta}}{2a}
 \therefore x = \pm\sqrt{6} - 1
 $$
 在解**难以配方或带二次根式或无法因式分解的一元二次方程中，使用公式法是极其有效的**。
