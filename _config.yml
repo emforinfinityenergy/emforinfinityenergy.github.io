@@ -535,7 +535,7 @@ busuanzi_count:
   enable: true
   # custom uv span for the whole site
   site_uv: true
-  site_uv_header: 本站已被 
+  site_uv_header: 本站已被
   site_uv_footer: 台设备访问
   # custom pv span for the whole site
   site_pv: true
