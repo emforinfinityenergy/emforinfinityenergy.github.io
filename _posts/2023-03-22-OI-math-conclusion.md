@@ -2,8 +2,9 @@
 layout: post
 title: OI数学专题总结
 author: EM
-date: 2023-01-17
+date: 2023-03-22
 categories: OI
+tags: [笔记]
 ---
 
 ## 数论
