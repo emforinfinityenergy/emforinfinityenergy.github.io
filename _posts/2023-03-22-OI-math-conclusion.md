@@ -4,13 +4,10 @@ title: OI数学专题总结
 author: EM
 date: 2023-03-22
 categories: OI
+description: 对过去几周的数学学习做一些总结……
 tags: [笔记]
 
 ---
-
-
-
-对过去几周的数学学习做一些总结……
 
 ## 数论
 
@@ -122,3 +119,6 @@ int qqt(int x, int y, int m) {
 当$$b\geq \varphi(m)$$
 
 $$a^b\equiv a^{b\mod\varphi(m)+ \varphi(m)}\pmod m$$
+
+
+
