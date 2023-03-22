@@ -74,7 +74,7 @@ $$\sigma(n)=(1+p_1+p_1^{2}+\cdots+p_1^{r_1})\cdots(1+p_k+p_k^{2}+\cdots+p_k^{r_k
 
 参考代码：
 
-```C++
+```c++
 for (int i = 1; i <= n; i++) for (int j = i; j <= n; j += i) f[j].push_back(i);
 ```
 
