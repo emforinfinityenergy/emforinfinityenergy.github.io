@@ -128,3 +128,110 @@ int qqt(int x, int y, int m) {
 
 二元一次方程是指形如$$ax+by=c$$的方程。
 
+接下来，我们将探寻这个方程的解。
+
+##### 基本推导
+
+易得，$$\gcd(a,b) \mid ax+by$$
+
+$$\therefore$$该方程有解的必要条件为$$\gcd(a,b) \mid c$$
+
+##### 裴蜀定理
+
+方程$$ax+by=\gcd(a,b)$$必有整数解
+
+利用裴蜀定理，我们可以将上述必要条件转化为充要条件。
+
+设$$d=\gcd(a,b)$$
+
+我们假设有另一个方程$$ax+by=d$$，$$\begin{align} \left\{ \begin{array} \newline x=x_0 \newline y=y_0  \end{array}\right .\end{align}$$ 为其一组解，则可以推导出$$\begin{align} \left\{ \begin{array} \newline x=\dfrac{c}{d} \times x_0 \newline y=\dfrac{c}{d} \times y_0  \end{array}\right .\end{align}$$ 为方程$$ax+by=c$$的一组解
+
+##### 扩展欧几里得算法
+
+扩展欧几里得算法是一种基于欧几里得算法（即辗转相除法）的算法，该算法可以帮我们求出$$ax+by=\gcd(a,b)$$的一组解。
+
+模板代码如下：
+
+```c++
+#define int long long
+int exgcd(int a, int b, int& x, int& y) {
+	if (b == 0) {
+		x = 1;
+		y = 0;
+		return a;
+	}
+	int p = exgcd(b, a % b, y, x);
+	y -= a / b * x;
+	return p;
+}
+```
+
+
+
+ 求出方程$$ax+by=\gcd(a,b)=d$$的一组解后，我们便可以得到原方程$$ax+by=c$$的所有解，方法如下：
+
+1. 求出$$ax+by=d$$的一组解$$\begin{align} \left\{ \begin{array} \newline x=x_0 \newline y=y_0  \end{array}\right .\end{align}$$
+2. 得到方程$$ax+by=c$$的一组解$$\begin{align} \left\{ \begin{array} \newline x_1=x_0 \times \dfrac{c}{d} \newline y_1=y_0 \times \dfrac{c}{d}  \end{array}\right .\end{align}$$
+3. 根据上述解推出原方程所有解$$\begin{align} \left\{ \begin{array} \newline x=x_1 + \dfrac{b}{d} \times k \newline y=y_1 - \dfrac{a}{d} \times k  \end{array}\right .\end{align}$$，where$$k\in Z$$
+
+##### 多元一次不定方程的求解
+
+尝试解$$a_1x_1+a_2x_2+\cdots+a_nx_n=b$$，方法如下：
+
+我们先解$$a_1x_1+a_2x_2=\gcd(a_1,a_2)=g_2$$
+
+然后我们将$$a_1x_1+a_2x_2$$代换为$$g_2t_2$$
+
+原方程化为$$g_2t_2+a_3x_3+\cdots+a_nx_n=b$$
+
+重复上述步骤，直到原方程剩下$$g_{n-1}t_{n-1}+a_nx_n=b$$
+
+反复扩欧解上述方程，解出所有$$x$$。
+
+由上述解法和裴蜀定理可看出，原方程有解的充要条件为$$\gcd(a_1,a_2,\cdots,a_n) \mid b$$
+
+#### 线性同余方程与中国剩余定理
+
+##### 线性同余方程
+
+形如$$ax\equiv b\pmod{m}$$的方程
+
+##### 中国剩余定理
+
+中国剩余定理是求解线性同余方程组的一种算法。
+
+求解的方程组应满足形式$$\begin{align} \left\{ \begin{array} \newline x \equiv a_1 \pmod{r_1} \newline x \equiv a_2 \pmod{r_2} \newline\vdots\newline x \equiv a_k \pmod{r_k}  \end{array}\right .\end{align}$$
+
+模板如下：
+
+```c++
+#define int long long
+int a[1005], r[1005];
+
+int qt(int x, int y, int mod) {
+    int ret = x * y - (int)((long double)x * y / mod + 1e-8) * mod;
+    return ret < 0 ? ret + mod : ret;
+}
+
+int exgcd(int a, int b, int& x, int& y) {
+    if (b == 0) {
+        x = 1;
+        y = 0;
+        return a;
+    }
+    int p = exgcd(b, a % b, y, x);
+    y -= a / b * x;
+    return p;
+}
+
+int CRT(int k) {
+    int n = 1, ans = 0;
+    for (int i = 1; i <= k; i++) n = n * r[i];
+    for (int i = 1; i <= k; i++) {
+        int m = n / r[i], b, y;
+        exgcd(m, r[i], b, y);
+        ans = (ans + qt(qt(a[i], m, n), b, n)) % n;
+    }
+    return (ans % n + n) % n;
+}
+```
