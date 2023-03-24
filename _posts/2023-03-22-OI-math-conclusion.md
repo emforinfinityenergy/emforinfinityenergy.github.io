@@ -17,23 +17,21 @@ tags: [笔记]
 
 唯一分解定理，又名算术基本定理。
 
-$$n=p_1^{r_1}p_2^{r_2}\cdots p_k^{r_k}=\prod\limits_{i=1}^{k}p_i^{r_i}$$
-
-where $$n\in Z,n>1,p$$为质数
+$$n=p_1^{r_1}p_2^{r_2}\cdots p_k^{r_k}=\prod\limits_{i=1}^{k}p_i^{r_i}$$，where $$n\in Z,n>1,p$$为质数
 
 ##### 推导：欧拉函数
 
-$$\varphi(n)=n(1-\dfrac{1}{p_1})(1-\dfrac{1}{p_2})\cdots(1-\dfrac{1}{p_3})$$
+ $$\varphi(n)=n(1-\dfrac{1}{p_1})(1-\dfrac{1}{p_2})\cdots(1-\dfrac{1}{p_3})$$
 
 - 利用容斥推导
 
-##### 推导：约数个数函数
+##### 推导：约数个数函数 
 
-$$d(n)=(r_1+1)(r_2+1)\cdots(r_k+1)$$
+ $$d(n)=(r_1+1)(r_2+1)\cdots(r_k+1)$$
 
 ##### 推导：约数和函数
 
-$$\sigma(n)=(1+p_1+p_1^{2}+\cdots+p_1^{r_1})\cdots(1+p_k+p_k^{2}+\cdots+p_k^{r_k})$$
+ $$\sigma(n)=(1+p_1+p_1^{2}+\cdots+p_1^{r_1})\cdots(1+p_k+p_k^{2}+\cdots+p_k^{r_k})$$
 
 #### 质因数分解
 
@@ -92,7 +90,7 @@ $$Z_{n}^*$$中所有元素和为$$\dfrac{n\varphi(n)}{2}$$
 
 $$\varphi(i)=\sum\limits_{i=1}^{k}\varphi(p_i^{r_i})$$，where $$\varphi(p^k)=p^k-p^{k-1}$$
 
-$$n=\sum\limits_{d|n}\varphi(d)$$
+$$n=\sum\limits_{d|n}\varphi(d)$$，where $$n\geq2$$
 
 #### 乘法取模
 
@@ -114,11 +112,19 @@ int qqt(int x, int y, int m) {
 }
 ```
 
+#### 除法取模
+
+ $$\dfrac{a}{b} \bmod p = \dfrac{a\bmod bp}{p}$$
+
 #### 欧拉降幂公式
 
 当$$b\geq \varphi(m)$$
 
-$$a^b\equiv a^{b\mod\varphi(m)+ \varphi(m)}\pmod m$$
+有$$a^b\equiv a^{b\mod\varphi(m)+ \varphi(m)}\pmod m$$
 
+### 专题3
 
+#### 二元一次不定方程
+
+二元一次方程是指形如$$ax+by=c$$的方程。
 
